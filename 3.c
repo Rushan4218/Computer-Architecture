@@ -1,11 +1,15 @@
 // conversion of decimal to binary
-
 #include <stdio.h>
 #include <string.h>
 
 void convertToBinary(int decimalData, char *binaryData)
 {
   int rem;
+  if (decimalData == 0)
+  {
+    strcat(binaryData, "0");
+    return;
+  }
   while (decimalData != 0)
   {
     rem = decimalData % 2;
@@ -25,6 +29,6 @@ int main()
   printf("Enter any decimal data: ");
   scanf("%d", &decimalData);
   convertToBinary(decimalData, binaryData);
-  printf("The decimal value of the given data is: %s", binaryData);
+  printf("The binary value of the given data is: %s", binaryData);
   return 0;
 }
